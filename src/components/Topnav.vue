@@ -11,8 +11,7 @@
 import { inject, Ref } from "vue";
 export default {
   setup() {
-    const menuVisible = inject<Ref<boolean>>("xxx");
-    console.log("topnav 获取的 MenuVisible 为：" + menuVisible.value);
+    const menuVisible = inject<Ref<boolean>>("menuVisible");
     const toggleMenu = () => {
       menuVisible.value = !menuVisible.value;
     };
