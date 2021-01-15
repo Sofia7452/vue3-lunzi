@@ -7,8 +7,10 @@ import { provide, ref } from "vue";
 export default {
   name: "App",
   setup() {
+    const width = document.documentElement.clientWidth;
     // provide使得后代都可以用，后代通过inject获取
-    const menuVisible = ref(false);
+    // PC端和移动端区别处理
+    const menuVisible = ref(width <= 500 ? false : true);
     provide("menuVisible", menuVisible);
   },
 };
